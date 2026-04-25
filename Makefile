@@ -23,7 +23,7 @@ dev:
 	$(HUGO) server --disableFastRender --buildDrafts
 
 build:
-	$(HUGO) --minify
+	$(HUGO)
 
 SYNC_OPTS =
 ifdef VERSION

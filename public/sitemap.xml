@@ -2,56 +2,56 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>//localhost:1313/docs/installation/</loc>
-    <lastmod>2026-04-14T22:50:43+05:30</lastmod>
+    <loc>/docs/installation/</loc>
+    <lastmod>2026-04-23T15:37:39+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/docs/overview/</loc>
-    <lastmod>2026-04-14T22:43:54+05:30</lastmod>
+    <loc>/docs/overview/</loc>
+    <lastmod>2026-04-25T08:48:03+02:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/docs/core-concepts/</loc>
-    <lastmod>2026-04-13T23:24:05+05:30</lastmod>
+    <loc>/docs/core-concepts/</loc>
+    <lastmod>2026-04-23T15:37:39+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/docs/changelog/</loc>
-    <lastmod>2026-04-13T23:24:05+05:30</lastmod>
+    <loc>/docs/changelog/</loc>
+    <lastmod>2026-04-25T08:48:03+02:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/docs/todo/</loc>
-    <lastmod>2026-04-13T23:24:05+05:30</lastmod>
+    <loc>/docs/todo/</loc>
+    <lastmod>2026-04-25T08:48:03+02:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/docs/debugging/</loc>
-    <lastmod>2026-04-13T23:24:05+05:30</lastmod>
+    <loc>/docs/debugging/</loc>
+    <lastmod>2026-04-25T08:48:03+02:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/docs/developing/</loc>
-    <lastmod>2026-04-13T23:24:05+05:30</lastmod>
+    <loc>/docs/developing/</loc>
+    <lastmod>2026-04-25T08:48:03+02:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/docs/dotgeneral-performance/</loc>
-    <lastmod>2026-04-13T23:24:05+05:30</lastmod>
+    <loc>/docs/dotgeneral-performance/</loc>
+    <lastmod>2026-04-25T08:48:03+02:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/docs/error-handling/</loc>
-    <lastmod>2026-04-13T23:24:05+05:30</lastmod>
+    <loc>/docs/error-handling/</loc>
+    <lastmod>2026-04-25T08:48:03+02:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/docs/go-huggingface/</loc>
-    <lastmod>2026-04-14T22:43:54+05:30</lastmod>
+    <loc>/docs/go-huggingface/</loc>
+    <lastmod>2026-04-23T15:37:39+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/docs/onnx-gomlx/</loc>
-    <lastmod>2026-04-14T22:43:54+05:30</lastmod>
+    <loc>/docs/onnx-gomlx/</loc>
+    <lastmod>2026-04-23T15:37:39+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/docs/backends/</loc>
-    <lastmod>2026-04-14T22:50:43+05:30</lastmod>
+    <loc>/docs/backends/</loc>
+    <lastmod>2026-04-23T15:37:39+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/categories/</loc>
+    <loc>/categories/</loc>
   </url><url>
-    <loc>//localhost:1313/community/</loc>
-    <lastmod>2026-04-14T03:20:49+05:30</lastmod>
+    <loc>/community/</loc>
+    <lastmod>2026-04-23T15:37:39+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/docs/</loc>
-    <lastmod>2026-04-13T23:59:36+05:30</lastmod>
+    <loc>/docs/</loc>
+    <lastmod>2026-04-23T15:37:39+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/examples/</loc>
-    <lastmod>2026-04-14T04:31:56+05:30</lastmod>
+    <loc>/examples/</loc>
+    <lastmod>2026-04-23T15:37:39+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/</loc>
-    <lastmod>2026-04-13T23:24:05+05:30</lastmod>
+    <loc>/</loc>
+    <lastmod>2026-04-23T15:37:39+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/</loc>
+    <loc>/tags/</loc>
   </url>
 </urlset>

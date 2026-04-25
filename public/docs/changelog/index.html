@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CHANGELOG — GoMLX</title>
   <meta name="description" content="An easy-to-use ML and math framework for Go. No Python. Like PyTorch, Jax, or TensorFlow for Go.">
   <meta property="og:title" content="CHANGELOG">
   <meta property="og:description" content="An easy-to-use ML and math framework for Go. No Python. Like PyTorch, Jax, or TensorFlow for Go.">
-  <link rel="canonical" href="//localhost:1313/docs/changelog/">
+  <link rel="canonical" href="/docs/changelog/">
   <link rel="icon" type="image/jpeg" href="/img/logo.jpeg">
 
   
@@ -31,7 +31,7 @@
     <a href="/" class="nav-logo" aria-label="GoMLX home">
       <img src="/img/logo.jpeg" class="logo-mark" alt="GoMLX logo" width="28" height="28" style="border-radius: 7px; object-fit: cover;">
       <span class="nav-wordmark">GoMLX</span>
-      <span class="nav-version" id="gomlx-version" title="Latest Release">v0.27.2</span>
+      <span class="nav-version" id="gomlx-version" title="Latest Release">v0.27.3</span>
     </a>
 
     <ul class="nav-links" role="list">
@@ -131,57 +131,57 @@
     <div class="sidebar-section">
       <div class="sidebar-section-title">Get Started</div>
       
-      <a href="//localhost:1313/docs/installation/" class="sidebar-link">Installation</a>
+      <a href="/docs/installation/" class="sidebar-link">Installation</a>
       
-      <a href="//localhost:1313/docs/overview/" class="sidebar-link">Overview</a>
+      <a href="/docs/overview/" class="sidebar-link">Overview</a>
       
-      <a href="//localhost:1313/docs/core-concepts/" class="sidebar-link">Core concepts</a>
+      <a href="/docs/core-concepts/" class="sidebar-link">Core concepts</a>
       
-      <a href="//localhost:1313/docs/first-model/" class="sidebar-link">Your first model</a>
+      <a href="/docs/first-model/" class="sidebar-link">Your first model</a>
       
     </div>
     
     <div class="sidebar-section">
       <div class="sidebar-section-title">Reference</div>
       
-      <a href="//localhost:1313/docs/graph-execution/" class="sidebar-link">Graph execution</a>
+      <a href="/docs/graph-execution/" class="sidebar-link">Graph execution</a>
       
-      <a href="//localhost:1313/docs/layers/" class="sidebar-link">Layers API</a>
+      <a href="/docs/layers/" class="sidebar-link">Layers API</a>
       
-      <a href="//localhost:1313/docs/training-loops/" class="sidebar-link">Training loops</a>
+      <a href="/docs/training-loops/" class="sidebar-link">Training loops</a>
       
-      <a href="//localhost:1313/docs/optimizers/" class="sidebar-link">Optimizers</a>
+      <a href="/docs/optimizers/" class="sidebar-link">Optimizers</a>
       
-      <a href="//localhost:1313/docs/losses/" class="sidebar-link">Losses</a>
+      <a href="/docs/losses/" class="sidebar-link">Losses</a>
       
-      <a href="//localhost:1313/docs/hyperparameters/" class="sidebar-link">Hyperparameters (with Context)</a>
+      <a href="/docs/hyperparameters/" class="sidebar-link">Hyperparameters (with Context)</a>
       
-      <a href="//localhost:1313/docs/plots-metrics/" class="sidebar-link">Plots &amp; metrics</a>
+      <a href="/docs/plots-metrics/" class="sidebar-link">Plots &amp; metrics</a>
       
-      <a href="//localhost:1313/docs/context_variables_checkpointing/" class="sidebar-link">Context, Variables and Checkpointing</a>
+      <a href="/docs/context_variables_checkpointing/" class="sidebar-link">Context, Variables and Checkpointing</a>
       
-      <a href="//localhost:1313/docs/backends/" class="sidebar-link">Backends</a>
+      <a href="/docs/backends/" class="sidebar-link">Backends</a>
       
     </div>
     
     <div class="sidebar-section">
       <div class="sidebar-section-title">Guides</div>
       
-      <a href="//localhost:1313/docs/go-huggingface/" class="sidebar-link">Go Huggingface</a>
+      <a href="/docs/go-huggingface/" class="sidebar-link">Go Huggingface</a>
       
-      <a href="//localhost:1313/docs/onnx-gomlx/" class="sidebar-link">ONNX-GoMLX</a>
+      <a href="/docs/onnx-gomlx/" class="sidebar-link">ONNX-GoMLX</a>
       
-      <a href="//localhost:1313/docs/datasets/" class="sidebar-link">Working with datasets</a>
+      <a href="/docs/datasets/" class="sidebar-link">Working with datasets</a>
       
-      <a href="//localhost:1313/docs/developing/" class="sidebar-link">Developing</a>
+      <a href="/docs/developing/" class="sidebar-link">Developing</a>
       
-      <a href="//localhost:1313/docs/debugging/" class="sidebar-link">Debugging</a>
+      <a href="/docs/debugging/" class="sidebar-link">Debugging</a>
       
-      <a href="//localhost:1313/docs/error-handling/" class="sidebar-link">Error Handling</a>
+      <a href="/docs/error-handling/" class="sidebar-link">Error Handling</a>
       
-      <a href="//localhost:1313/docs/dotgeneral-performance/" class="sidebar-link">Dot General Performance</a>
+      <a href="/docs/dotgeneral-performance/" class="sidebar-link">Dot General Performance</a>
       
-      <a href="//localhost:1313/docs/changelog/" class="sidebar-link is-active">Changelog</a>
+      <a href="/docs/changelog/" class="sidebar-link is-active">Changelog</a>
       
     </div>
     
@@ -229,7 +229,22 @@
       <h1>CHANGELOG</h1>
       
     </header>
-    <div class="docs-body"><h3 id="core">Core:</h3>
+    <div class="docs-body"><h1 id="next-api-changes-with-the-large-backends-refactoring">Next: API changes with the large <code>backends</code> refactoring!</h1>
+<h2 id="api-changes-backends-and-related-packages-moved-to-githubcomgomlxcompute">API Changes: <code>backends</code> and related packages moved to <code>github.com/gomlx/compute</code></h2>
+<ul>
+<li>Packages <code>backends</code>, <code>dtypes</code>, <code>shapes</code> and <code>distributed</code> moved to <code>github.com/gomlx/compute</code></li>
+<li>New <code>github.com/gomlx/compute</code> repo will host what was in package <code>backends</code>.
+<ul>
+<li><code>backends/simplego</code> backend now moved to <code>github.com/gomlx/compute/gobackend</code> (no longer &ldquo;simple&rdquo;).</li>
+<li><code>backends/xla</code> backend now moved to <code>github.com/gomlx/go-xla/compute/xla</code>.</li>
+<li><code>backends/default</code> still imports both by default the &ldquo;go&rdquo; and the &ldquo;xla&rdquo; backends.</li>
+</ul>
+</li>
+<li>XLA backends used for test in <code>support/testutil</code> only where the platform is supported (and if the tag <code>noxla</code> is NOT selected).</li>
+<li>New <code>tensors/dtensor</code> to hold distributed tensors (previously in <code>pkg/core/distributed</code>).</li>
+</ul>
+<h1 id="0273-improves-sub-byte-support-optimized-raw-byte-data-transfers-fnn-ensembles-and-major-transformer-updates-including-bert-and-gemma-models">0.27.3: Improves sub-byte support, optimized raw-byte data transfers, FNN ensembles, and major transformer updates including BERT and Gemma models.</h1>
+<h3 id="core">Core:</h3>
 <ul>
 <li>Package <code>tensors</code>
 <ul>
@@ -296,7 +311,8 @@ graphs (in GoMLX it&rsquo;s only used in tests), but it requires change for anyo
 <li>Updates and fixes to the API; Added methods to build partial models: <code>AllLayers</code>, <code>ForwardLayer</code>, <code>LogitsFromEmbeddings</code>, <code>EmbedTokesn</code>, etc.</li>
 <li>Updated positional-encoder support.</li>
 <li>Added options <code>WithFinalNormalization</code>, <code>WithScalingOfTokenEmbeddings</code>, <code>WithArchitecture</code>, <code>WithSlidingWindow</code>
-and <code>WithLayerTypes</code>.</li>
+and <code>WithLayerTypes</code>, <code>WithEmbedNormalization</code>, <code>WithTokenTypeEmbedding</code>.</li>
+<li>Added BERT and Gemma types of models.</li>
 </ul>
 </li>
 </ul>
@@ -317,6 +333,7 @@ and <code>WithLayerTypes</code>.</li>
 </ul>
 </li>
 </ul>
+<h1 id="0272-dotgeneral-with-accumulatordtype-transformer-architecture-parameter">0.27.2: DotGeneral with AccumulatorDType; Transformer architecture parameter;</h1>
 <h3 id="core-1">Core:</h3>
 <ul>
 <li>
@@ -369,6 +386,19 @@ to hugely decrease temporary memory usage. See issue in <a href="https://github.
 (With the exception of half-precision types, which use float32 as accumulator by default).</li>
 </ul>
 </li>
+</ul>
+<h1 id="v0271-minor-fixes-and-updates-onnx-gomlx-examples-now-use-v041">v0.27.1: Minor fixes and updates; ONNX-GoMLX examples now use v0.4.1.</h1>
+<ul>
+<li>
+<p>Package <code>backends</code>:</p>
+<ul>
+<li>Added <code>QuantGGML</code> quantization scheme with <code>GGMLQuantType</code> enum for native GGML block formats
+(Q4_0, Q8_0, IQ4_NL, Q4_K, Q6_K).</li>
+<li>Added <code>IQ4NLLookupTable</code> for IQ4_NL non-linear dequantization.</li>
+<li>Added <code>QuantizedEmbeddingLookup</code> to <code>FusedOps</code> interface for quantized embedding lookups.</li>
+<li>Added <code>ShiftLeft</code>, <code>ShiftRightArithmetic</code>, <code>ShiftRightLogical</code> operations.</li>
+</ul>
+</li>
 <li>
 <p>Package <code>examples/...</code>:</p>
 <ul>
@@ -379,6 +409,14 @@ to hugely decrease temporary memory usage. See issue in <a href="https://github.
 <p>Package <code>graph</code>:</p>
 <ul>
 <li><code>Floor</code> and <code>Ceil</code> operations now are identity for integer dtypes.</li>
+<li>Added <code>BackendQuantizedEmbeddingLookup</code> graph-level op.</li>
+<li>Added <code>LogicalShiftLeft</code>, <code>LogicalShiftRight</code> ops for sub-byte unpacking.</li>
+</ul>
+</li>
+<li>
+<p>Package <code>nn</code>:</p>
+<ul>
+<li>Added <code>QuantizedGather</code> layer for quantized embedding lookups with automatic fallback.</li>
 </ul>
 </li>
 <li>
@@ -387,6 +425,16 @@ to hugely decrease temporary memory usage. See issue in <a href="https://github.
 <li>Removed panics during execution: return errors instead.</li>
 <li>Fixed missing annotation/stacktrace on not-implemented errors.</li>
 <li>Implemented <code>Pad()</code> operation (and add some more tests in <code>graph.TestPad</code>).</li>
+<li>Added <code>FusedQuantizedDense</code> support for GGML-quantized weights (Q4_0, Q8_0, IQ4_NL, Q4_K, Q6_K).</li>
+<li>Added <code>QuantizedEmbeddingLookup</code> for quantized embedding lookups with on-the-fly dequantization.</li>
+<li>Added shift operation executors.</li>
+<li>Fixed <code>execBitcast</code> buffer reuse for cross-bit-width types (e.g. Uint8 → Float16). See #374.</li>
+</ul>
+</li>
+<li>
+<p>Package <code>ggml</code>:</p>
+<ul>
+<li>Added <code>dense.go</code>, <code>dequant.go</code>, <code>gather.go</code> for GGML model weight handling.</li>
 </ul>
 </li>
 <li>
@@ -395,8 +443,10 @@ to hugely decrease temporary memory usage. See issue in <a href="https://github.
 <li>Changed <code>TF_CPP_MIN_LOG_LEVEL</code> to default to 3. See <a href="https://github.com/openxla/xla/issues/26466">https://github.com/openxla/xla/issues/26466</a></li>
 </ul>
 </li>
-<li>
-<p>Package <code>backends</code>: major refactoring to add support for functions/closures.</p>
+</ul>
+<h1 id="v0270-graph-functions-improved-go-backend-fusion-ops-quantization-dtypes-more-ml-layers--fixes">v0.27.0: Graph functions; Improved Go backend (fusion ops); Quantization dtypes; more ML layers &amp; fixes</h1>
+<ul>
+<li>Package <code>backends</code>: major refactoring to add support for functions/closures.
 <ul>
 <li>Added <code>backends.Function</code>, which now holds all the &ldquo;ops&rdquo; methods.</li>
 <li>Added <code>NewFunction</code>, <code>Closure</code> and <code>Call</code>.</li>
@@ -409,8 +459,7 @@ fallback to decomposed operations when not supported or for gradients.</li>
 <li><code>DotGeneral()</code> now takes a <code>DotGeneralConfig</code> struct, with options for setting the accumulator and output dtypes.</li>
 </ul>
 </li>
-<li>
-<p>Package <code>simplego</code>:</p>
+<li>Package <code>simplego</code>:
 <ul>
 <li>Added <code>Float16</code> support (thx @timkaye11)</li>
 <li>Added dedup of computation nodes (aka. &ldquo;common subexpression elimination&rdquo; CSE) (thx @timkaye11, @janpfeifer)
@@ -433,20 +482,17 @@ release for actual acceleration).</li>
 <li><code>Bitcast</code> refactored to pure bit reinterpretation; sub-byte unpacking moved to <code>ConvertDType</code>.</li>
 </ul>
 </li>
-<li>
-<p>New package <code>bucketing</code>:</p>
+<li>New package <code>bucketing</code>:
 <ul>
 <li>Tools to manage bucketing of tensors (or anything else) &ndash; thx @ajroetker</li>
 </ul>
 </li>
-<li>
-<p>Package <code>dtypes</code>:</p>
+<li>Package <code>dtypes</code>:
 <ul>
 <li>Added &lsquo;Uint2&rsquo;, &lsquo;Uint4&rsquo;, &lsquo;Int2&rsquo;, &lsquo;Int4&rsquo;.</li>
 </ul>
 </li>
-<li>
-<p>Package <code>graph</code>:</p>
+<li>Package <code>graph</code>:
 <ul>
 <li>Added <code>Function</code> concept (and support for closures) and the <code>Function.Call</code> operation.</li>
 <li>Control Flow: Added <code>While</code> and <code>If</code> operations.</li>
@@ -459,41 +505,32 @@ back and forth from/to <code>uint8</code> (bytes), to ease quantization.</li>
 <li><code>Exec</code> graph compilation is now concurrent, avoiding redundant compilations for the same graph shape.</li>
 </ul>
 </li>
-<li>
-<p>Package <code>ml/layers/attention</code>: Improved <code>MultiHeadAttention</code>; Added <code>KVCache</code> support.</p>
+<li>Package <code>ml/layers/attention</code>: Improved <code>MultiHeadAttention</code>; Added <code>KVCache</code> support.
 <ul>
 <li>Added Grouped Query Attention (GQA) support.</li>
 <li>Added <code>UseQKVProjection()</code> option for fused Q/K/V Dense projection.</li>
 <li><code>FusedScaledDotProductAttention</code> now supports boolean masks.</li>
 </ul>
 </li>
-<li>
-<p>Package <code>ml/layers/attention/pos</code>: Added <code>PositionalEncoder</code> interface, and &ldquo;RoPE&rdquo; (Rotary Positional Encoding) implementation.</p>
-</li>
-<li>
-<p>Package <code>ml/models/transformers</code>:</p>
+<li>Package <code>ml/layers/attention/pos</code>: Added <code>PositionalEncoder</code> interface, and &ldquo;RoPE&rdquo; (Rotary Positional Encoding) implementation.</li>
+<li>Package <code>ml/models/transformers</code>:
 <ul>
 <li>Added a <code>Transformer</code> &ldquo;model&rdquo;: a collection of transformer layers are setup based on given configuration.</li>
 </ul>
 </li>
-<li>
-<p>Package <code>ml/decode</code>:
-Added a <code>Decoder</code> object to generate text given a sequential model.</p>
-</li>
-<li>
-<p>Package <code>ml/decode/sample</code>:</p>
+<li>Package <code>ml/decode</code>:
+Added a <code>Decoder</code> object to generate text given a sequential model.</li>
+<li>Package <code>ml/decode/sample</code>:
 <ul>
 <li>Added implementation of various sampling strategies (greedy, temperature, beam-search, top-k, top-p, etc.), used by the <code>decode</code> package.</li>
 </ul>
 </li>
-<li>
-<p>Package <code>ml/layers/activations</code>:</p>
+<li>Package <code>ml/layers/activations</code>:
 <ul>
 <li>Added <code>HardSwish</code>.</li>
 </ul>
 </li>
-<li>
-<p>Package <code>examples</code>:</p>
+<li>Package <code>examples</code>:
 <ul>
 <li>Separated in its own sub-module, to separate its dependencies.</li>
 <li>Added <code>gpt2</code>: A simple GPT-2 implementation using the new transformers and decode packages. It downloads the model from HuggingFace.</li>
@@ -503,10 +540,9 @@ Added a <code>Decoder</code> object to generate text given a sequential model.</
 <li>Added <code>BERT-base-NER</code>: A BERT-base model fine-tuned for Named Entity Recognition.</li>
 </ul>
 </li>
-<li>
-<p>Bumped github actions versions to the new &ldquo;Node24&rdquo; ones.</p>
-</li>
+<li>Bumped github actions versions to the new &ldquo;Node24&rdquo; ones.</li>
 </ul>
+<h1 id="v0260-using-the-new-githubcomgomlxgo-xla-library-added-linuxarm64-and-windowsamd64-support-for-xla-cpu">v0.26.0: Using the new github.com/gomlx/go-xla library. Added linux/arm64 and windows/amd64 support for XLA CPU.</h1>
 <p>API Change: <code>dtypes</code> package moved from <code>github.com/gomlx/gopjrt/dtypes</code> to <code>github.com/gomlx/gomlx/pkg/core/dtypes</code>.
 It should be a simple change in import.</p>
 <p>XLA:</p>
@@ -549,6 +585,7 @@ And added <code>xla.AutoInstall()</code> to immediately auto-install standard pl
 </ul>
 </li>
 </ul>
+<h1 id="v0250-distributed-execution-api-cleanup-more-go-idiomatic">v0.25.0: Distributed execution; API cleanup (more Go idiomatic)</h1>
 <p>Hightlights:</p>
 <ul>
 <li>
@@ -614,7 +651,7 @@ still use panic to return error &ndash; otherwise it&rsquo;s too painful to expr
 </ul>
 </li>
 <li>Package <code>pkg/core/distributed</code>:
--Added <code>DeviceMesh</code>, <code>ShardSpec</code> and <code>distributed.Tensor</code> objects.</li>
+-Added <code>DeviceMesh</code>, <code>ShardSpec</code> and <code>dtensor.Tensor</code> objects.</li>
 <li>Package <code>pkg/core/tensors</code>:
 <ul>
 <li>Added <code>Tensor.CheckValid()</code>, <code>Tensor.Device()</code>, <code>Tensor.Backend()</code></li>
@@ -665,22 +702,20 @@ Thanks @ajroetker!</li>
 </ul>
 </li>
 </ul>
+<h1 id="v0241-20251023-adding-darwin-mac-support-for-cpu-pjrt-plugin">v0.24.1: 2025/10/23 Adding Darwin (Mac) support for CPU PJRT plugin</h1>
 <ul>
-<li>
-<p>Updated dependency to Gopjrt v0.8.4: added macOS (darwin/arm64) support and cpu PJRT plugin.</p>
-</li>
-<li>
-<p>Include <code>stablehlo</code> (== <code>xla</code>) by default for macOS in Darwin.</p>
-</li>
-<li>
-<p>GitHub actions:</p>
+<li>Updated dependency to Gopjrt v0.8.4: added macOS (darwin/arm64) support and cpu PJRT plugin.</li>
+<li>Include <code>stablehlo</code> (== <code>xla</code>) by default for macOS in Darwin.</li>
+<li>GitHub actions:
 <ul>
 <li>Added macOS tests.</li>
 <li>Removed unnecessary <code>apt install</code> of packages.</li>
 </ul>
 </li>
-<li>
-<p><strong>Highlights</strong> of this release:</p>
+</ul>
+<h1 id="v0240-20251021-api-change-package-tree-restructured-under-pkg-exec-normalization-backend-xla-now-provided-by-stablehlo">v0.24.0: 2025/10/21 <strong>API change</strong>: package tree restructured under <code>pkg</code>, <code>Exec</code> normalization; Backend <code>xla</code> now provided by <code>stablehlo</code></h1>
+<ul>
+<li><strong>Highlights</strong> of this release:
 <ul>
 <li>Deprecating old &ldquo;xla&rdquo; backend (now called &ldquo;oldxla&rdquo;) in favor of &ldquo;stablehlo&rdquo; (aliased to &ldquo;xla&rdquo; as well):
 in most cases nothing needs to be done (the <code>github.com/gomlx/gomlx/backends/default</code> will replace one by the other automatically),
@@ -768,6 +803,7 @@ If you need this, please let us know, maybe we move it to under support, or move
 </li>
 <li>Updated and refreshed all notebooks, including the tutorial.</li>
 </ul>
+<h1 id="v0232-20251001-updated-dependencies-on-githubcomgomlxgo-xlastablehlov005-and-githubcomgomlxgopjrtv082">v0.23.2: 2025/10/01: Updated dependencies on <code>github.com/gomlx/go-xla/stablehlo@v0.0.5</code> and <code>github.com/gomlx/gopjrt@v0.8.2</code>.</h1>
 <ul>
 <li>Updated dependency to new Gopjrt v0.8.2 because of CUDA PJRT (lack of) backward compatibility issues.</li>
 <li>Package <code>stablehlo</code>:
@@ -777,33 +813,32 @@ If you need this, please let us know, maybe we move it to under support, or move
 </ul>
 </li>
 </ul>
+<h1 id="v0231-20250925-small-bug-fixes">v0.23.1: 2025/09/25: Small bug fixes.</h1>
 <ul>
-<li>
-<p>Package <code>backends</code>:</p>
+<li>Package <code>backends</code>:
 <ul>
 <li>Removed op <code>Broadcast</code>: it was unnecessary, since <code>BroadcastInDim</code> is a superset.</li>
 </ul>
 </li>
-<li>
-<p>Package <code>graph</code>:</p>
+<li>Package <code>graph</code>:
 <ul>
 <li>Backprop of <code>BroadcastPrefix</code> was not defined. Now that is uses <code>BroadcastInDim</code> instead, it works.</li>
 </ul>
 </li>
-<li>
-<p>Package <code>simplego</code>:</p>
+<li>Package <code>simplego</code>:
 <ul>
 <li>Only log ConvGeneral statistics on error.</li>
 </ul>
 </li>
-<li>
-<p>Package <code>shapes</code>:</p>
+</ul>
+<h1 id="v0230-20250921-beta-stablehlo-backend-release">v0.23.0: 2025/09/21: beta <code>stablehlo</code> backend release</h1>
+<ul>
+<li>Package <code>shapes</code>:
 <ul>
 <li>Added <code>FromAnyValue</code>: extract shape from a Go type.</li>
 </ul>
 </li>
-<li>
-<p>New backend: <code>stablehlo</code> (or simply <em>&ldquo;hlo&rdquo;</em> for short) using <a href="https://github.com/gomlx/go-xla/pkg/stablehlo">https://github.com/gomlx/go-xla/pkg/stablehlo</a>.</p>
+<li>New backend: <code>stablehlo</code> (or simply <em>&ldquo;hlo&rdquo;</em> for short) using <a href="https://github.com/gomlx/go-xla/stablehlo">https://github.com/gomlx/go-xla/stablehlo</a>.
 <ul>
 <li>All standard binary and unary ops implemented.</li>
 <li>A handful of the standard ops also implemented.</li>
@@ -811,8 +846,7 @@ If you need this, please let us know, maybe we move it to under support, or move
 <li>Large cleanup of generators: most no longer depending on <code>gopjrt/xlabuilder</code>.</li>
 </ul>
 </li>
-<li>
-<p>Package <code>graph</code>:</p>
+<li>Package <code>graph</code>:
 <ul>
 <li><code>ArgMin</code>, <code>ArgMax</code>:
 <ul>
@@ -832,8 +866,7 @@ If you need this, please let us know, maybe we move it to under support, or move
 </li>
 </ul>
 </li>
-<li>
-<p>Package <code>backends</code>:</p>
+<li>Package <code>backends</code>:
 <ul>
 <li>Ops are no longer auto-generated: now it is its own source of truth (as opposite to being generated from XLA code)</li>
 <li>Added <code>IsNaN</code></li>
@@ -841,65 +874,57 @@ If you need this, please let us know, maybe we move it to under support, or move
 <li>Removed <code>SelectAndScatterSum</code>, which was wrong, and now is deprecated in <code>gopjrt</code>.</li>
 </ul>
 </li>
-<li>
-<p>Package <code>train</code>:</p>
+<li>Package <code>train</code>:
 <ul>
 <li><code>Loop.EveryNSteps</code> takes into account the current global step (as opposed to always start the counting from 0).</li>
 <li>Datasets implementing <code>train.Dataset</code> can now also implement <code>ShortName() string</code> to provide a short name to be
 used in metrics.</li>
 </ul>
 </li>
-<li>
-<p>Package <code>losses</code>:</p>
+<li>Package <code>losses</code>:
 <ul>
 <li><code>MeanSquaredError</code>: fixed weights/mask expected mask.</li>
 </ul>
 </li>
-<li>
-<p>Package <code>commandline</code>:</p>
+<li>Package <code>commandline</code>:
 <ul>
 <li>Exposed <code>RefreshPeriod</code> with frequency of command-line updates.</li>
 <li>Fixed flickering of the progress bar / table of metrics.</li>
 <li>Improved colors, &ldquo;humanize&rdquo; steps printing.</li>
 </ul>
 </li>
-<li>
-<p><code>gomlx_checkpoints</code> CLI tool:</p>
+<li><code>gomlx_checkpoints</code> CLI tool:
 <ul>
 <li>Added <code>-plot</code> to generate plots for all metrics. It accepts various models, so one can use it to compare models.</li>
 </ul>
 </li>
 </ul>
+<h1 id="v0221-20250822--convolutions-">v0.22.1: 2025/08/22 🌀 Convolutions 🌀</h1>
 <p>(release v0.22.0 was skipped due to a bug notice slightly after release)</p>
 <ul>
-<li>
-<p>Package <code>backends</code>:</p>
+<li>Package <code>backends</code>:
 <ul>
 <li><code>ConvGeneralDilated</code> renamed to <code>ConvGeneral</code></li>
 </ul>
 </li>
-<li>
-<p>Package <code>backends/shapeinference</code>:</p>
+<li>Package <code>backends/shapeinference</code>:
 <ul>
 <li>Added <code>ConvGeneralOp</code> to infer the output shape of a convolution.</li>
 </ul>
 </li>
-<li>
-<p>Package <code>backends/simplego</code>:</p>
+<li>Package <code>backends/simplego</code>:
 <ul>
 <li>Implemented <code>ConvGeneral</code> operation: supporting strides, padding, dilations (input and kernel),
 and grouping (channels or batch), as well as transposing (arbitrary axes) convolutions.</li>
 </ul>
 </li>
-<li>
-<p>Package <code>types/shapes</code>:</p>
+<li>Package <code>types/shapes</code>:
 <ul>
 <li><code>Shape.Iter()</code> and <code>Shape.IterOn()</code> also yields the flat index being iterated.</li>
 <li>Added <code>Shape.Strides()</code> and <code>Shape.IterOnAxes()</code>.</li>
 </ul>
 </li>
-<li>
-<p>Package <code>graph</code>:</p>
+<li>Package <code>graph</code>:
 <ul>
 <li>Names of parameters for <code>ConvGeneral</code> were standardized to &ldquo;input,&rdquo; &ldquo;kernel&rdquo; and &ldquo;channels.&rdquo;</li>
 <li><code>ConvGeneralDilated</code> is being aliased to <code>ConvGeneral</code> and the former will be deprecated on
@@ -910,31 +935,28 @@ a future version.</li>
 <li><code>TransposeAllDims</code> -&gt; <code>TransposeAllAxes</code>.</li>
 </ul>
 </li>
-<li>
-<p>Package <code>layers</code>:</p>
+<li>Package <code>layers</code>:
 <ul>
 <li>Updated the configuration names for <code>Convolution</code>, to match the standards in the <code>graph</code> package.</li>
 <li>Added <code>ChannelGroupCount()</code> and <code>BatchGroupCount()</code> to <code>Convolution</code> configuration.</li>
 </ul>
 </li>
-<li>
-<p>Updated to gopjrt v0.8.0, with the changes to the convolution API.</p>
-</li>
-<li>
-<p>Package <code>tensors</code> and <code>graph</code>:</p>
+<li>Updated to gopjrt v0.8.0, with the changes to the convolution API.</li>
+</ul>
+<h1 id="v0211-20250816-added-zero-dim-tensors-support-and-other-small-improvements">v0.21.1: 2025/08/16 Added Zero-dim tensors support and other small improvements.</h1>
+<ul>
+<li>Package <code>tensors</code> and <code>graph</code>:
 <ul>
 <li>Added support for zero-dim tensors.</li>
 </ul>
 </li>
-<li>
-<p>Package <code>backends</code>:</p>
+<li>Package <code>backends</code>:
 <ul>
 <li>Method <strong><code>New()</code> will return an error (as opposed to panic)</strong>.
 The temporarily <code>NewOrErr</code> was marked as deprecated, use <code>New</code> instead.</li>
 </ul>
 </li>
-<li>
-<p>Package <code>optimizers</code>:</p>
+<li>Package <code>optimizers</code>:
 <ul>
 <li>New <code>AdamConfig.WithBackoffSteps()</code> (or the hyperparameter <code>adam_backoff</code>) that prevents gradient steps
 from being taken until the given number of steps has executed. This allows a better estimate (moving average) of
@@ -943,49 +965,45 @@ the gradients (&ldquo;momentum&rdquo;) and their variances to be calculated befo
 hyperparameters.</li>
 </ul>
 </li>
-<li>
-<p>Package <code>context</code>:</p>
+<li>Package <code>context</code>:
 <ul>
 <li>Added <code>Variable.DType()</code>.</li>
 <li>Variable <code>#rngstate</code> marked as non-trainable during creation.</li>
 </ul>
 </li>
-<li>
-<p><code>gomlx_checkpoints</code>:</p>
+<li><code>gomlx_checkpoints</code>:
 <ul>
 <li>Added <code>-perturb</code>.</li>
 <li>Now it has its own <code>go.mod</code>, so it separated the dependencies.</li>
 </ul>
 </li>
-<li>
-<p>Docker:</p>
+<li>Docker:
 <ul>
 <li>Included <code>openssh-client</code> (ssh) and <code>dlv</code> (Go debugger) by default.</li>
 </ul>
 </li>
-<li>
-<p><code>SimpleGo</code> (&ldquo;go&rdquo;) backend:</p>
+<li><code>SimpleGo</code> (&ldquo;go&rdquo;) backend:
 <ul>
 <li>Fixed mishandling of multi-output operations and race condition on parallel execution (#197)</li>
 <li>Refactoring and clean up of execution loops.</li>
 <li>Separated <code>TestDotGeneral_PerformanceTable</code> behind the build tag <code>perf</code>.</li>
 </ul>
 </li>
-<li>
-<p>Package <code>simplego</code>:</p>
+</ul>
+<h1 id="v0210-20250701--summer-edition-">v0.21.0: 2025/07/01 🌞 Summer Edition 🌞</h1>
+<ul>
+<li>Package <code>simplego</code>:
 <ul>
 <li>Added <code>GetBackend</code> that returns a singleton backend, created with the default configuration at the first request.</li>
 </ul>
 </li>
-<li>
-<p>Package <code>ui/commandline</code>:</p>
+<li>Package <code>ui/commandline</code>:
 <ul>
 <li>Added optional extra arbitrary metrics to print in the command-line with <code>AttachProgressBar</code>.</li>
 <li>Added <code>FormatDuration</code> to pretty-print duration.</li>
 </ul>
 </li>
-<li>
-<p>Package <code>graph</code></p>
+<li>Package <code>graph</code>
 <ul>
 <li>Added gradients of <code>Cos</code> and <code>Sin</code> that were missing.</li>
 <li>Fixed (removed) the extra empty line in auto-generate functions comments that was preventing the documentation
@@ -1001,44 +1019,38 @@ of NaN values in gradient: great to debug where are the NaN appearing in the mod
 </li>
 </ul>
 </li>
-<li>
-<p>Package <code>ml/train</code>:</p>
+<li>Package <code>ml/train</code>:
 <ul>
 <li>Improved support for accumulated gradients. Fixed evaluation (context reuse) for when using accumulated gradients.</li>
 <li>Added <code>Trainer.WithMaxExecutors</code>.</li>
 </ul>
 </li>
-<li>
-<p>Package <code>ml/train/metrics</code>:</p>
+<li>Package <code>ml/train/metrics</code>:
 <ul>
 <li><code>MeanMetric</code> allows for disabling dynamic batch weighting.  API slightly changed: <code>NewMeanMetric</code> now
 returns a <code>MeanMetric</code> struct, not an interface.</li>
 <li>Added <code>StreamingMedianMetric</code>.</li>
 </ul>
 </li>
-<li>
-<p>Package <code>ml/train/optimizers</code>:</p>
+<li>Package <code>ml/train/optimizers</code>:
 <ul>
 <li>Added <code>RMSProp()</code> optimizer.</li>
 </ul>
 </li>
-<li>
-<p>Package <code>ml/layers</code></p>
+<li>Package <code>ml/layers</code>
 <ul>
 <li>Added normalizing 1/sqrt(d_k) factor to attention logits in the MultiHeadAttention layer: this will break current
 models using it.</li>
 <li>Added <code>RMSNorm</code> normalizer.</li>
 </ul>
 </li>
-<li>
-<p><code>gomlx_checkpoints</code> command-line tool:</p>
+<li><code>gomlx_checkpoints</code> command-line tool:
 <ul>
 <li>Added support for multiple models to allow comparing models.</li>
 <li>Fixed the printing of metrics with tiny values.</li>
 </ul>
 </li>
-<li>
-<p>Package <code>context</code>:</p>
+<li>Package <code>context</code>:
 <ul>
 <li>Allow VariableInitializers to use the <code>context.Context</code> itself, with its own random initializer.</li>
 <li><code>DefaultInitializer</code> now creates an initializer. The new default uses He initializer, the same used in PyTorch.</li>
@@ -1050,11 +1062,11 @@ models using it.</li>
 </li>
 </ul>
 </li>
-<li>
-<p>Fixed some flaky tests.</p>
-</li>
-<li>
-<p>Package <code>train</code>:</p>
+<li>Fixed some flaky tests.</li>
+</ul>
+<h1 id="v0201-20250612-traineraccumulategradients-when-the-batch-doesnt-fit-memory-vnn-fixes-numpy-improvements">v0.20.1: 2025/06/12 Trainer.AccumulateGradients (when the batch doesn&rsquo;t fit memory); VNN fixes; Numpy improvements.</h1>
+<ul>
+<li>Package <code>train</code>:
 <ul>
 <li>Better handling of loss (without regularization) in metrics. Added <code>SetLossNoRegularization</code> and <code>GetLossNoRegularization</code>.</li>
 <li>Added <code>Trainer.AccumulateGradients(n)</code> to accumulate n steps of gradients before applying them. This is useful if
@@ -1062,15 +1074,13 @@ the desired batch size doesn&rsquo;t fit in memory, so it accumulates the gradie
 is calculated.</li>
 </ul>
 </li>
-<li>
-<p>Package <code>optimizers</code>:</p>
+<li>Package <code>optimizers</code>:
 <ul>
 <li>Added support for the new <code>train.OptimizeWithGradients</code> interface, to support gradient accumulators.</li>
 <li>Cleaned up <code>StochasticGradientDescent</code> API. Added option to disable decay for testing.</li>
 </ul>
 </li>
-<li>
-<p>Pacakge <code>vnn</code>:</p>
+<li>Pacakge <code>vnn</code>:
 <ul>
 <li>Added <code>Config.Scaler</code> to add a scaler operator just after the linear projection of a layer. It allows the VNN
 to operate on magnitude independent vectors.</li>
@@ -1079,14 +1089,12 @@ to operate on magnitude independent vectors.</li>
 <li>Added <code>VNN().ActivationFn()</code> to allow setting arbitrary activation functions.</li>
 </ul>
 </li>
-<li>
-<p>Package <code>types/tensors/numpy</code>:</p>
+<li>Package <code>types/tensors/numpy</code>:
 <ul>
 <li>Added support for &ldquo;Fortran order&rdquo; files.</li>
 </ul>
 </li>
-<li>
-<p>Package <code>tensors</code>:</p>
+<li>Package <code>tensors</code>:
 <ul>
 <li>Attempting to finalize an &ldquo;on-device&rdquo; tensor whose backend has already been finalized is now a no-op &ndash; as opposed to an panic.</li>
 <li>Access to a on-device or shared buffer now checks that the backend hasn&rsquo;t been finalized.
@@ -1094,8 +1102,10 @@ And if it has, it panics with a meaningful error message.</li>
 <li>Added integration tests.</li>
 </ul>
 </li>
-<li>
-<p>Package <code>backends</code>:</p>
+</ul>
+<h1 id="v0200-small-api-change-backendsnewwithconfig-changed-to-return-an-error">v.0.20.0: Small API change: <code>backends.NewWithConfig()</code> changed to return an error.</h1>
+<ul>
+<li>Package <code>backends</code>:
 <ul>
 <li><strong>API CHANGE</strong>: Method <code>NewWithConfig()</code> changed</li>
 <li>Method <strong><code>New()</code> will be changed to return an error (as opposed to panic) at next version</strong>.
@@ -1106,34 +1116,29 @@ an error) were created to have a clear API, and <code>New()</code> was marked as
 <li>Fixed bug in <code>xla</code> backend where an error was not being sent when Backend was already finalized.</li>
 </ul>
 </li>
-<li>
-<p>Package <code>types/tensors/numpy</code> with methods to read and write tensors from/to <code>.npy</code> and <code>.npz</code> files.</p>
-</li>
-<li>
-<p>Package <code>simplego</code>:</p>
+<li>Package <code>types/tensors/numpy</code> with methods to read and write tensors from/to <code>.npy</code> and <code>.npz</code> files.</li>
+<li>Package <code>simplego</code>:
 <ul>
 <li>Fixed bug introduced in parallelize version of Erf(x).</li>
 </ul>
 </li>
-<li>
-<p>Package <code>tensors</code>:</p>
+<li>Package <code>tensors</code>:
 <ul>
 <li>Added <code>Tensor.ToLocal()</code> to detach a tensor from its backend.</li>
 </ul>
 </li>
-<li>
-<p>Package <code>ui/gonb/plotly</code>:</p>
+<li>Package <code>ui/gonb/plotly</code>:
 <ul>
 <li>Update dependencies to new go-plotly v0.7.0 (many changes to the API), while preserving as much as possible
 the GoMLX api offered.</li>
 </ul>
 </li>
-<li>
-<p>Updated example notebooks to use <code>github.com/gomlx/gomlx/backends/default</code> (instead of only <code>/xla</code>) and to
-use the new <code>backends.MustNew()</code>.</p>
-</li>
-<li>
-<p>Package <code>simplego</code>, the pure Go backend:</p>
+<li>Updated example notebooks to use <code>github.com/gomlx/gomlx/backends/default</code> (instead of only <code>/xla</code>) and to
+use the new <code>backends.MustNew()</code>.</li>
+</ul>
+<h1 id="v0195-20240530-simplego-go-backend-optimizations">v0.19.5: 2024/05/30 SimpleGo (go) backend optimizations</h1>
+<ul>
+<li>Package <code>simplego</code>, the pure Go backend:
 <ul>
 <li>Added several benchmarks for SimpleGo DotGeneral. Run with:
 <code>go test ./backends/simplego/ -test.v -test.run PerformanceTable -perf</code></li>
@@ -1154,26 +1159,25 @@ to force one type of execution or another.</li>
 when SIMD is available.</li>
 </ul>
 </li>
-<li>
-<p>Vector Neural Networks (VNN): allows one to build 3D rotation (SO(3)) equivariant and/or invariant networks. See package <code>ml/layers/vnn</code>.</p>
-</li>
-<li>
-<p>Package <code>xla</code></p>
+</ul>
+<h1 id="v0194-20240524-added-vector-neural-networks-vnns">v0.19.4: 2024/05/24 added Vector Neural Networks (VNNs)</h1>
+<ul>
+<li>Vector Neural Networks (VNN): allows one to build 3D rotation (SO(3)) equivariant and/or invariant networks. See package <code>ml/layers/vnn</code>.</li>
+<li>Package <code>xla</code>
 <ul>
 <li>Remove dependencies to <code>gopjrt</code> internal protos: requires updated <code>Gopjrt</code>.</li>
 </ul>
 </li>
-<li>
-<p>Package <code>tensors</code></p>
+<li>Package <code>tensors</code>
 <ul>
 <li>Fixed pretty-print of booleans.</li>
 </ul>
 </li>
-<li>
-<p>v0.19.2 skipped &hellip; issues with the release.</p>
-</li>
-<li>
-<p>Package <code>simplego</code>:</p>
+</ul>
+<h1 id="v0193-20240520-many-simplego-improvements">v0.19.3: 2024/05/20 Many SimpleGo improvements.</h1>
+<ul>
+<li>v0.19.2 skipped &hellip; issues with the release.</li>
+<li>Package <code>simplego</code>:
 <ul>
 <li>Fixed <code>Gather</code> of scalar values.</li>
 <li>Fixed <code>Where</code> checking of shape.</li>
@@ -1182,61 +1186,53 @@ when SIMD is available.</li>
 <li>Fixed initialization of re-used buffers where needed.</li>
 </ul>
 </li>
-<li>
-<p>Package <code>backends/default</code>:</p>
+<li>Package <code>backends/default</code>:
 <ul>
 <li>Only include XLA by default on linux/amd64 platforms.</li>
 </ul>
 </li>
-<li>
-<p>Package <code>shapeinference</code>:</p>
+<li>Package <code>shapeinference</code>:
 <ul>
 <li>Changed to return errors instead of exceptions.</li>
 </ul>
 </li>
-<li>
-<p>Package <code>types/tensors</code>:</p>
+<li>Package <code>types/tensors</code>:
 <ul>
 <li>Removed dependency to <code>gopjrt/pjrt</code> &ndash; otherwise we&rsquo;ll always need to install the C/C++ library.</li>
 </ul>
 </li>
-<li>
-<p>Package <code>types/shape</code>:</p>
+<li>Package <code>types/shape</code>:
 <ul>
 <li>Added <code>Shape.Iter()</code> and <code>Shape.IterOn()</code>.</li>
 </ul>
 </li>
-<li>
-<p>Package <code>backend</code>:</p>
+<li>Package <code>backend</code>:
 <ul>
 <li><code>Backend</code> interface now returns errors instead of panicking.</li>
 </ul>
 </li>
-<li>
-<p>Package <code>graph</code>:</p>
+<li>Package <code>graph</code>:
 <ul>
 <li>Added <code>NewExecOrError</code> and <code>Exec.CallOrError</code> as error-returning alternatives.</li>
 </ul>
 </li>
-<li>
-<p>gofmt cleanups by @zjtv</p>
-</li>
-<li>
-<p><code>go mod tidy</code></p>
-</li>
-<li>
-<p>Package <code>simplego</code>:</p>
+<li>gofmt cleanups by @zjtv</li>
+</ul>
+<h1 id="v0191-20250430-simplego-fixes-and-new-ops-new-xla-requires-gopjrt-v070-update">v0.19.1: 2025/04/30 SimpleGo fixes and new ops; New XLA, requires Gopjrt v0.7.0 update.</h1>
+<ul>
+<li><code>go mod tidy</code></li>
+<li>Package <code>simplego</code>:
 <ul>
 <li>&ldquo;not implemented&rdquo; error now includes the name of the corresponding method that was not implemented.</li>
 <li>Several memory fixes.</li>
 <li>Added <code>Slice</code> and <code>RngBitsGenerator</code> ops.</li>
 </ul>
 </li>
-<li>
-<p>Updated to Gopjrt v0.7.0, with more memory fixes. <strong>Requires an update of the C++ libraries</strong>.</p>
-</li>
-<li>
-<p>Package <code>backends</code>:</p>
+<li>Updated to Gopjrt v0.7.0, with more memory fixes. <strong>Requires an update of the C++ libraries</strong>.</li>
+</ul>
+<h1 id="v0190-20250429-added-simplego-a-pure-go-backend">v0.19.0: 2025/04/29 Added SimpleGo, a pure Go backend</h1>
+<ul>
+<li>Package <code>backends</code>:
 <ul>
 <li>Added <code>simplego</code>, a portable, simple albeit slow backend.
 <ul>
@@ -1249,14 +1245,12 @@ when SIMD is available.</li>
 <li>Added <code>List()</code> function that returns the currently registered (compiled-in) backends.</li>
 </ul>
 </li>
-<li>
-<p>Package <code>checkpoints</code></p>
+<li>Package <code>checkpoints</code>
 <ul>
 <li>Added <code>Config.FromEmbed</code> that allows loading a checkpoint from an embedded variable.</li>
 </ul>
 </li>
-<li>
-<p>Package <code>graph</code>:</p>
+<li>Package <code>graph</code>:
 <ul>
 <li><code>Gather</code> and <code>GatherSlices</code> now have and extra argument called <code>indicesAreSorted</code> that tells whether
 the start indices are guaranteed to be sorted, which allows some optimizations in some platforms.</li>
@@ -1264,31 +1258,28 @@ the start indices are guaranteed to be sorted, which allows some optimizations i
 purposes.</li>
 </ul>
 </li>
-<li>
-<p>Moved code generation tools from <code>cmd</code> to <code>internal/cmd</code> directory.</p>
-</li>
-<li>
-<p>XLA Backend:</p>
+<li>Moved code generation tools from <code>cmd</code> to <code>internal/cmd</code> directory.</li>
+</ul>
+<h1 id="v0181-20250413-many-fixes-xla-update-tensor-clone">v0.18.1: 2025/04/13 Many fixes, XLA update, Tensor clone.</h1>
+<ul>
+<li>XLA Backend:
 <ul>
 <li>Updated gopjrt dependency: fix to Scatter flags.</li>
 </ul>
 </li>
-<li>
-<p>Package <code>graph</code>:</p>
+<li>Package <code>graph</code>:
 <ul>
 <li>Removed spurious logging.</li>
 <li>Added gradient for ScatterSum, ScatterMax, ScatterMin. Only for simple shapes for now.</li>
 <li>Fixed ExecOnceN to return many outputs.</li>
 </ul>
 </li>
-<li>
-<p>Package <code>tensors</code>:</p>
+<li>Package <code>tensors</code>:
 <ul>
 <li>Added <code>Tensor.Clone</code> and <code>Tensor.OnDeviceClone</code>.</li>
 </ul>
 </li>
-<li>
-<p>Package <code>context</code>:</p>
+<li>Package <code>context</code>:
 <ul>
 <li>Removed deprecated <code>NewContext</code></li>
 <li>Added <code>Variable.CloneToContext</code></li>
@@ -1298,19 +1289,18 @@ created/executed at the same time for the same Context.Exec object (with differe
 <li>Added <code>Variable.Finalize</code> and <code>Context.Finalize</code>.</li>
 </ul>
 </li>
-<li>
-<p>Updated all dependencies and re-tested.</p>
-</li>
-<li>
-<p>XLA Backend:</p>
+<li>Updated all dependencies and re-tested.</li>
+</ul>
+<h1 id="v0180-ragged2d-xla-update-fixed-scatter-functions-fixed-memory-leaks">v0.18.0: Ragged2D; XLA update; Fixed Scatter functions; Fixed memory leaks.</h1>
+<ul>
+<li>XLA Backend:
 <ul>
 <li>Updated dependency to newest Gopjrt 0.6.3: small memory leak fixes</li>
 <li>Updated CPU PJRT and XlaBuilder</li>
 <li>Fixed Scatter* functions.</li>
 </ul>
 </li>
-<li>
-<p>Package <code>graph</code>:</p>
+<li>Package <code>graph</code>:
 <ul>
 <li>Fixed <code>ScatterSum</code> (renamed from the now deprecated <code>ScatterAdd</code>), <code>ScatterMax</code> and <code>ScatterMin</code>. No gradients for <code>ScatterMax</code> and <code>ScatterMin</code> yet.</li>
 <li>Added <code>Ragged2D</code> with some utilities, in particular <code>Ragged2D.Softmax</code>.</li>
@@ -1318,27 +1308,23 @@ created/executed at the same time for the same Context.Exec object (with differe
 in Go-code format.</li>
 </ul>
 </li>
-<li>
-<p>Added MNIST example (thanks to @TuSKan).</p>
-</li>
-<li>
-<p><code>gomlx_checkpoints</code> now displays the value of scalar variables.</p>
-</li>
-<li>
-<p>Package <code>checkpoints</code>:</p>
+</ul>
+<h1 id="v0171-20250226-cosinesimilarity-bitcast-and-many-fixes-and-improvements">v0.17.1: 2025/02/26 CosineSimilarity, Bitcast and many fixes and improvements.</h1>
+<ul>
+<li>Added MNIST example (thanks to @TuSKan).</li>
+<li><code>gomlx_checkpoints</code> now displays the value of scalar variables.</li>
+<li>Package <code>checkpoints</code>:
 <ul>
 <li>Loading a checkpoint overwrites the values of variables already present in the context.</li>
 <li>Fixes when saving, in particular if using <code>Immediate()</code> loading.</li>
 </ul>
 </li>
-<li>
-<p>Package <code>tensors</code>:</p>
+<li>Package <code>tensors</code>:
 <ul>
 <li>Allow shared tensors to be donated.</li>
 </ul>
 </li>
-<li>
-<p>Package <code>graph</code>:</p>
+<li>Package <code>graph</code>:
 <ul>
 <li>Fixed when using axes != -1 for <code>L1Norm</code>.</li>
 <li>Added <code>IsZero</code> shortcut.</li>
@@ -1349,20 +1335,17 @@ in Go-code format.</li>
 <li>Added <code>BitcastConvert</code>.</li>
 </ul>
 </li>
-<li>
-<p>Package <code>ml/context</code>:</p>
+<li>Package <code>ml/context</code>:
 <ul>
 <li>Added support for string derived types for <code>context.GetParamsOr[T]</code>.</li>
 </ul>
 </li>
-<li>
-<p>Package <code>ml/train</code>:</p>
+<li>Package <code>ml/train</code>:
 <ul>
 <li>Created <code>ExecPerStepUpdateGraphFn</code> for those creating custom &ldquo;TrainStep&rdquo; functions.</li>
 </ul>
 </li>
-<li>
-<p>Package <code>ml/train/losses</code>:</p>
+<li>Package <code>ml/train/losses</code>:
 <ul>
 <li>Triplet losses now work with context.</li>
 <li><code>CheckExtraLabelsForWeightsAndMask</code> now (1) accepts weights and mask in any order; (2) normalize weights such that the sum is (non-masked) bathSize,
@@ -1371,29 +1354,20 @@ preserving the ratio. This way the mean will be 1.</li>
 Also, now using MaskedReduceMean if there is a mask, and all losses return a scalar.</li>
 </ul>
 </li>
-<li>
-<p>Package <code>xla</code>:</p>
+<li>Package <code>xla</code>:
 <ul>
 <li>Removed suppression of logging: new PJRTs are not outputting random debug messages anymore.</li>
 </ul>
 </li>
-<li>
-<p>Updated dependency to <code>gopjrt</code> v0.6.2.</p>
-</li>
-<li>
-<p>Replaced <code>stringer</code> by <code>enumer</code> everywhere.</p>
-</li>
-<li>
-<p>Backend API change: separating Logical and Bitwise versions of various ops derived from And, Or, Xor and Not.</p>
-</li>
-<li>
-<p>Updated dependency to gopjrt v0.6.0.</p>
-</li>
-<li>
-<p>Added &ldquo;Flow Matching&rdquo; examples/demo.</p>
-</li>
-<li>
-<p>Package <code>layers</code>:</p>
+<li>Updated dependency to <code>gopjrt</code> v0.6.2.</li>
+<li>Replaced <code>stringer</code> by <code>enumer</code> everywhere.</li>
+</ul>
+<h1 id="v0170-bitwise-ops-triplet-losses-new-layers-fixes-and-more">v0.17.0: bitwise ops, triplet losses, new layers, fixes, and more.</h1>
+<ul>
+<li>Backend API change: separating Logical and Bitwise versions of various ops derived from And, Or, Xor and Not.</li>
+<li>Updated dependency to gopjrt v0.6.0.</li>
+<li>Added &ldquo;Flow Matching&rdquo; examples/demo.</li>
+<li>Package <code>layers</code>:
 <ul>
 <li>Added <code>layers.DropBlock</code>, a type of dropout for images.</li>
 <li>Added <code>layers.DropPath</code> and <code>layers.DropPathFromContext</code>, a type of dropout used in Residual connections, to drop full paths.</li>
@@ -1405,17 +1379,10 @@ lead to NaNs when reducing values for normalization. Added also a hyperparameter
 </li>
 </ul>
 </li>
-<li>
-<p>Added <code>Context.RandomBenoulli</code> to sample from a Bernoulli (binary) distribution.</p>
-</li>
-<li>
-<p>Correctly pretty-print Float16 and BFloat16 tensors.</p>
-</li>
-<li>
-<p>Several fixes and small improvements to command-line tool <code>gomlx_checkpoint</code>.</p>
-</li>
-<li>
-<p>Package <code>nanlogger</code>:</p>
+<li>Added <code>Context.RandomBenoulli</code> to sample from a Bernoulli (binary) distribution.</li>
+<li>Correctly pretty-print Float16 and BFloat16 tensors.</li>
+<li>Several fixes and small improvements to command-line tool <code>gomlx_checkpoint</code>.</li>
+<li>Package <code>nanlogger</code>:
 <ul>
 <li>Store only the stack-trace, and trim the stack into the nanlogger package.</li>
 <li>Does not exit, simply report the NanLogger. User can define a handler, if they want the training to exit.</li>
@@ -1423,8 +1390,7 @@ lead to NaNs when reducing values for normalization. Added also a hyperparameter
 <li>Fixed nanlogger for Float16 and BFloat16; Also, it first prints other logged tensors, before failing with a NaN.</li>
 </ul>
 </li>
-<li>
-<p>Package <code>losses</code>:</p>
+<li>Package <code>losses</code>:
 <ul>
 <li>Added <code>ParamLoss</code>: hyperparameter to define the loss, and many constant values.</li>
 <li>Added <code>LossFromContext</code>, using <code>ParamLoss</code> hyperparameter.</li>
@@ -1433,8 +1399,7 @@ lead to NaNs when reducing values for normalization. Added also a hyperparameter
 <li>Added TripletLoss: various negative sampling strategies and distance metrics.</li>
 </ul>
 </li>
-<li>
-<p>Package <code>graph</code>:</p>
+<li>Package <code>graph</code>:
 <ul>
 <li>More unit tests.</li>
 <li>Aliases nodes: allow setting aliases to nodes, and to retrieve them by those aliases. Useful for layers
@@ -1452,21 +1417,18 @@ and <code>Graph.IterAliasedNodes</code>.</li>
 <li>Kept an alias from <code>And</code>, <code>Or</code> and <code>Not</code> to the <code>LogicalAnd</code>, <code>LogicalOr</code>, <code>LogicalXor</code> and <code>LogicalNot</code>.</li>
 </ul>
 </li>
-<li>
-<p>MatMul fixed for some edge shape configuration and greatly accelerated in some cases.</p>
-</li>
-<li>
-<p>XLA backend now accepts the absolute path to the PJRT plugin (<code>GOMLX_BACKEND=&quot;xla:&lt;pjrt_path&gt;&quot;</code>)</p>
-</li>
-<li>
-<p>Updated GitHub action (<code>go.yaml</code>) to only change the README.md with the result of the change, if pushing to the
-<code>main</code> branch.</p>
-</li>
-<li>
-<p>Added <code>Pow()</code> gradient.</p>
-</li>
-<li>
-<p>Package <code>tensors</code>:</p>
+</ul>
+<h1 id="v0161----20241219--matmul-fixes">v0.16.1 - 🎄 2024/12/19 🎄 MatMul fixes</h1>
+<ul>
+<li>MatMul fixed for some edge shape configuration and greatly accelerated in some cases.</li>
+</ul>
+<h1 id="v0160----20241219--benchmarks-speed-improvements-with-gopjrt-v050-shared-buffers">v0.16.0 - 🎄 2024/12/19 🎄 Benchmarks, Speed improvements with gopjrt v0.5.0, Shared buffers.</h1>
+<ul>
+<li>XLA backend now accepts the absolute path to the PJRT plugin (<code>GOMLX_BACKEND=&quot;xla:&lt;pjrt_path&gt;&quot;</code>)</li>
+<li>Updated GitHub action (<code>go.yaml</code>) to only change the README.md with the result of the change, if pushing to the
+<code>main</code> branch.</li>
+<li>Added <code>Pow()</code> gradient.</li>
+<li>Package <code>tensors</code>:
 <ul>
 <li>Added <code>Tensor</code> transfer to/from device benchmarks.</li>
 <li>Added <code>Tensor.CopyFrom()</code> to transfer from one tensor (potentially on device) directly to another
@@ -1477,76 +1439,57 @@ as input, when it is changed by the host in-between executions of a graph.</li>
 <li><code>Tensor.ConstFlatData</code> now avoids a copy, if <code>Backend.BufferData</code> is available.</li>
 </ul>
 </li>
-<li>
-<p>Updated dependency to gopjrt v0.5.0, with support for shared buffers.</p>
-</li>
-<li>
-<p>Package <code>backends</code> and <code>backends/xla</code>:</p>
+<li>Updated dependency to gopjrt v0.5.0, with support for shared buffers.</li>
+<li>Package <code>backends</code> and <code>backends/xla</code>:
 <ul>
 <li>Added <code>Backend.HasSharedBuffer</code>, <code>Backend.NewSharedBuffer</code> and <code>Backend.BufferData</code>.</li>
 </ul>
 </li>
-<li>
-<p>Added pre-linking of CPU PJRT packages, both statically and dynamically.</p>
-</li>
-<li>
-<p>Re-enabling Mac version: currently only statically linked.</p>
-</li>
-<li>
-<p>Fixed printing of <code>uint</code> tensors.</p>
-</li>
-<li>
-<p>Fixed Dockerfile.</p>
-</li>
-<li>
-<p>Example CIFAR &ndash; changes will break previous checkpoints:</p>
+</ul>
+<h1 id="v0153---20241125">v0.15.3 - 2024/11/25</h1>
+<ul>
+<li>Added pre-linking of CPU PJRT packages, both statically and dynamically.</li>
+<li>Re-enabling Mac version: currently only statically linked.</li>
+</ul>
+<h1 id="v0152---20241117">v0.15.2 - 2024/11/17</h1>
+<ul>
+<li>Fixed printing of <code>uint</code> tensors.</li>
+<li>Fixed Dockerfile.</li>
+<li>Example CIFAR &ndash; changes will break previous checkpoints:
 <ul>
 <li>Added inference example for Cifar models.</li>
 <li>Fixed model scope issue.</li>
 <li>Fixed KAN model issue.</li>
 </ul>
 </li>
-<li>
-<p>Added <code>checkpoints.Load()</code>: just like <code>checkpoints.Build</code>, but it complains if a checkpoint doesn&rsquo;t exist.</p>
-</li>
-<li>
-<p>Package <code>graph</code>:</p>
+<li>Added <code>checkpoints.Load()</code>: just like <code>checkpoints.Build</code>, but it complains if a checkpoint doesn&rsquo;t exist.</li>
+<li>Package <code>graph</code>:
 <ul>
 <li>Added <code>ReduceVariance</code> and an alias <code>Variance</code>. Fixed <code>ReduceAndKeep</code> if no axes are given.</li>
 <li>Added <code>Stack</code>: similar to <code>Concatenate</code> but it creates a new axis.</li>
 </ul>
 </li>
-<li>
-<p>BSpline(Standard)-KAN:</p>
+<li>BSpline(Standard)-KAN:
 <ul>
 <li>Better initialization &ndash; constant variance across layers.</li>
 <li>Extrapolate constant.</li>
 <li>Knots from -1.0 to 1.0.</li>
 </ul>
 </li>
-<li>
-<p>PiecewiseLinear-KAN: better initialization (constant variance across layers)</p>
-</li>
-<li>
-<p>Added <code>layers/lstm</code> to create LSTM layers (experimental), in use by ONNX conversion to GoMLX.</p>
-</li>
-<li>
-<p>Updated dependencies; gopjrt v0.4.7.</p>
-</li>
-<li>
-<p>Updated dependency to <strong>gopjrt</strong> 0.4.5</p>
-</li>
-<li>
-<p>Moving package <code>huggingface</code> and <code>downloader</code> to &ldquo;github.com/gomlx/go-huggingface&rdquo;: marked as deprecated.</p>
-</li>
-<li>
-<p>Added checks and better error report for misuse of rngState in random functions.</p>
-</li>
-<li>
-<p>Added graph.RandomIntN and context.Context.RandomIntN.</p>
-</li>
-<li>
-<p>Package <code>graph</code>:</p>
+<li>PiecewiseLinear-KAN: better initialization (constant variance across layers)</li>
+<li>Added <code>layers/lstm</code> to create LSTM layers (experimental), in use by ONNX conversion to GoMLX.</li>
+<li>Updated dependencies; gopjrt v0.4.7.</li>
+</ul>
+<h1 id="v0151---20241111-updated-downloader-in-support-for">v0.15.1 - 2024/11/11 Updated downloader, in support for</h1>
+<ul>
+<li>Updated dependency to <strong>gopjrt</strong> 0.4.5</li>
+<li>Moving package <code>huggingface</code> and <code>downloader</code> to &ldquo;github.com/gomlx/go-huggingface&rdquo;: marked as deprecated.</li>
+<li>Added checks and better error report for misuse of rngState in random functions.</li>
+<li>Added graph.RandomIntN and context.Context.RandomIntN.</li>
+</ul>
+<h1 id="v0150---20241101-some-api-clean-up-added-support-for-onnx-model-conversion">v0.15.0 - 2024/11/01 Some API clean up; Added support for ONNX model conversion.</h1>
+<ul>
+<li>Package <code>graph</code>:
 <ul>
 <li>Added <code>MatMul</code>, with semantics similar to <code>numpy.matmul</code></li>
 <li>Renamed <code>ExpandDims</code> to <code>InsertAxes</code> and added <code>ExpandAxes</code>: the old <code>ExpandDims</code> had a slightly different
@@ -1557,8 +1500,7 @@ We defined a deprecated &lsquo;ExpandedDims&rsquo; that maps to <code>InsertAxes
 <li>Graph/Node introspection: added <code>node.ConstantValue</code>, <code>node.IsConstantExpression</code>.</li>
 </ul>
 </li>
-<li>
-<p>Package <code>context</code>:</p>
+<li>Package <code>context</code>:
 <ul>
 <li>Fixed <code>ExecOnce</code>: it was missing the variadic args for the computation graph.</li>
 <li><code>InspectVariableInScope</code> and <code>InspectVariable</code> renamed to <code>GetVariable</code> and <code>GetVariableByScopeAndName</code>
@@ -1566,8 +1508,7 @@ respectively. Alias to the older names left for compatibility (and marked as dep
 will be removed in future versions.</li>
 </ul>
 </li>
-<li>
-<p>Package <code>tensors</code>:</p>
+<li>Package <code>tensors</code>:
 <ul>
 <li>Added <code>Tensor.Summary(precision int)</code> to pretty-print a summary of the values of a tensor, numpy-like.</li>
 </ul>
@@ -2223,7 +2164,7 @@ docs and test.</li>
 </ul>
 </div>
     
-    <div class="last-updated">Last updated April 13, 2026</div>
+    <div class="last-updated">Last updated April 25, 2026</div>
     
     <nav class="docs-pagination" aria-label="Page navigation">
       
@@ -2243,16 +2184,30 @@ docs and test.</li>
     <div class="docs-toc-title">On this page</div>
     <nav id="TableOfContents">
   <ul>
+    <li><a href="#api-changes-backends-and-related-packages-moved-to-githubcomgomlxcompute">API Changes: <code>backends</code> and related packages moved to <code>github.com/gomlx/compute</code></a></li>
+  </ul>
+
+  <ul>
     <li>
       <ul>
         <li><a href="#core">Core:</a></li>
         <li><a href="#packages-in-pkgml">Packages in <code>pkg/ml</code></a></li>
         <li><a href="#packages-in-pkgsupport">Packages in <code>pkg/support</code></a></li>
         <li><a href="#backends">Backends:</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li>
+      <ul>
         <li><a href="#core-1">Core:</a></li>
         <li><a href="#backends-1">Backends:</a></li>
       </ul>
     </li>
+  </ul>
+
+  <ul>
     <li><a href="#v0140---20241024">v0.14.0 - 2024/10/24</a></li>
     <li><a href="#v0130---20241007">v0.13.0 - 2024/10/07</a></li>
     <li><a href="#v0120---20240923">v0.12.0 - 2024/09/23</a></li>
