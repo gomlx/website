@@ -2,10 +2,23 @@
 title: "CHANGELOG"
 section: "Guides"
 weight: 10
-source: "https://github.com/gomlx/gomlx/blob/main/docs/CHANGELOG.md"
+source: "https://github.com/gomlx/gomlx/blob/compute/docs/CHANGELOG.md"
 ---
 
+# Next: API changes with the large `backends` refactoring!
 
+## API Changes: `backends` and related packages moved to `github.com/gomlx/compute`
+
+- Packages `backends`, `dtypes`, `shapes` and `distributed` moved to `github.com/gomlx/compute`
+- New `github.com/gomlx/compute` repo will host what was in package `backends`.
+  - `backends/simplego` backend now moved to `github.com/gomlx/compute/gobackend` (no longer "simple").
+  - `backends/xla` backend now moved to `github.com/gomlx/go-xla/compute/xla`.
+  - `backends/default` still imports both by default the "go" and the "xla" backends.
+- XLA backends used for test in `support/testutil` only where the platform is supported (and if the tag `noxla` is NOT selected).
+- New `tensors/dtensor` to hold distributed tensors (previously in `pkg/core/distributed`).
+
+
+# 0.27.3: Improves sub-byte support, optimized raw-byte data transfers, FNN ensembles, and major transformer updates including BERT and Gemma models.
 
 ### Core:
 - Package `tensors`
@@ -48,7 +61,8 @@ source: "https://github.com/gomlx/gomlx/blob/main/docs/CHANGELOG.md"
   - Updates and fixes to the API; Added methods to build partial models: `AllLayers`, `ForwardLayer`, `LogitsFromEmbeddings`, `EmbedTokesn`, etc.
   - Updated positional-encoder support.
   - Added options `WithFinalNormalization`, `WithScalingOfTokenEmbeddings`, `WithArchitecture`, `WithSlidingWindow`
-    and `WithLayerTypes`.
+    and `WithLayerTypes`, `WithEmbedNormalization`, `WithTokenTypeEmbedding`.
+  - Added BERT and Gemma types of models.
 
 ### Packages in `pkg/support`
 
@@ -61,6 +75,7 @@ source: "https://github.com/gomlx/gomlx/blob/main/docs/CHANGELOG.md"
 - Package `xla`:
   - `BufferToFlatData` and `BufferFromFlatData` now transfer using raw-bytes, for a slight gain in performance.
 
+# 0.27.2: DotGeneral with AccumulatorDType; Transformer architecture parameter; 
 
 ### Core:
 - Package `graph`:
@@ -92,21 +107,42 @@ source: "https://github.com/gomlx/gomlx/blob/main/docs/CHANGELOG.md"
   - DotGeneral with accumulation dtypes: it automatically converts the input dtype to the accumulation dtype first.
     (With the exception of half-precision types, which use float32 as accumulator by default).
 
+# v0.27.1: Minor fixes and updates; ONNX-GoMLX examples now use v0.4.1.
+
+- Package `backends`:
+  - Added `QuantGGML` quantization scheme with `GGMLQuantType` enum for native GGML block formats
+    (Q4_0, Q8_0, IQ4_NL, Q4_K, Q6_K).
+  - Added `IQ4NLLookupTable` for IQ4_NL non-linear dequantization.
+  - Added `QuantizedEmbeddingLookup` to `FusedOps` interface for quantized embedding lookups.
+  - Added `ShiftLeft`, `ShiftRightArithmetic`, `ShiftRightLogical` operations.
 
 - Package `examples/...`:
   - Updated `gemma3`, `mxbai-rerank` and `bert-base-ner` to use the new `onnx-gomlx` v0.4.1 API, bumped dependency.
 
 - Package `graph`:
   - `Floor` and `Ceil` operations now are identity for integer dtypes.
+  - Added `BackendQuantizedEmbeddingLookup` graph-level op.
+  - Added `LogicalShiftLeft`, `LogicalShiftRight` ops for sub-byte unpacking.
+
+- Package `nn`:
+  - Added `QuantizedGather` layer for quantized embedding lookups with automatic fallback.
 
 - Package `simplego`:
   - Removed panics during execution: return errors instead.
-  - Fixed missing annotation/stacktrace on not-implemented errors. 
+  - Fixed missing annotation/stacktrace on not-implemented errors.
   - Implemented `Pad()` operation (and add some more tests in `graph.TestPad`).
+  - Added `FusedQuantizedDense` support for GGML-quantized weights (Q4_0, Q8_0, IQ4_NL, Q4_K, Q6_K).
+  - Added `QuantizedEmbeddingLookup` for quantized embedding lookups with on-the-fly dequantization.
+  - Added shift operation executors.
+  - Fixed `execBitcast` buffer reuse for cross-bit-width types (e.g. Uint8 → Float16). See #374.
+
+- Package `ggml`:
+  - Added `dense.go`, `dequant.go`, `gather.go` for GGML model weight handling.
 
 - Package `xla`:
   - Changed `TF_CPP_MIN_LOG_LEVEL` to default to 3. See https://github.com/openxla/xla/issues/26466
 
+# v0.27.0: Graph functions; Improved Go backend (fusion ops); Quantization dtypes; more ML layers & fixes
 
 - Package `backends`: major refactoring to add support for functions/closures.
   - Added `backends.Function`, which now holds all the "ops" methods.
@@ -171,6 +207,7 @@ source: "https://github.com/gomlx/gomlx/blob/main/docs/CHANGELOG.md"
   - Added `BERT-base-NER`: A BERT-base model fine-tuned for Named Entity Recognition.
 - Bumped github actions versions to the new "Node24" ones.
 
+# v0.26.0: Using the new github.com/gomlx/go-xla library. Added linux/arm64 and windows/amd64 support for XLA CPU.
 
 API Change: `dtypes` package moved from `github.com/gomlx/gopjrt/dtypes` to `github.com/gomlx/gomlx/pkg/core/dtypes`.
 It should be a simple change in import.
@@ -198,6 +235,7 @@ Other updates:
 - Package `simplego`:
   - Registration of executors with priority.
 
+# v0.25.0: Distributed execution; API cleanup (more Go idiomatic)
 
 Hightlights:
 
@@ -241,7 +279,7 @@ Distributed computation improvements and refactorings:
   - Package `backends/notimplemented`:
     - Added dummy `Backend` that can be used to easily mock backends.
 - Package `pkg/core/distributed`:
-  -Added `DeviceMesh`, `ShardSpec` and `distributed.Tensor` objects.
+  -Added `DeviceMesh`, `ShardSpec` and `dtensor.Tensor` objects.
 - Package `pkg/core/tensors`:
   - Added `Tensor.CheckValid()`, `Tensor.Device()`, `Tensor.Backend()`
   - Changing it to return an error (as opposed to panic) where possible.
@@ -268,6 +306,7 @@ Other improvements:
   - Partially fixed a race condition where the executable is finalized during the execution, causing crashes -- 
     Thanks @ajroetker!
 
+# v0.24.1: 2025/10/23 Adding Darwin (Mac) support for CPU PJRT plugin
 
 * Updated dependency to Gopjrt v0.8.4: added macOS (darwin/arm64) support and cpu PJRT plugin.
 * Include `stablehlo` (== `xla`) by default for macOS in Darwin. 
@@ -275,6 +314,7 @@ Other improvements:
   * Added macOS tests.
   * Removed unnecessary `apt install` of packages.
 
+# v0.24.0: 2025/10/21 **API change**: package tree restructured under `pkg`, `Exec` normalization; Backend `xla` now provided by `stablehlo`
 
 * **Highlights** of this release:
   * Deprecating old "xla" backend (now called "oldxla") in favor of "stablehlo" (aliased to "xla" as well):
@@ -334,12 +374,14 @@ Other improvements:
   * Progressbar now shows the median step duration.
 * Updated and refreshed all notebooks, including the tutorial.
 
+# v0.23.2: 2025/10/01: Updated dependencies on `github.com/gomlx/go-xla/stablehlo@v0.0.5` and `github.com/gomlx/gopjrt@v0.8.2`.
 
 - Updated dependency to new Gopjrt v0.8.2 because of CUDA PJRT (lack of) backward compatibility issues.
 - Package `stablehlo`:
   - Added support for comparison of bool values, and added corresponding tests.
   - Fixed wrong checking for during shapeinference.Gather
 
+# v0.23.1: 2025/09/25: Small bug fixes.
 
 * Package `backends`:
   * Removed op `Broadcast`: it was unnecessary, since `BroadcastInDim` is a superset.
@@ -348,10 +390,11 @@ Other improvements:
 * Package `simplego`:
   * Only log ConvGeneral statistics on error.
 
+# v0.23.0: 2025/09/21: beta `stablehlo` backend release
 
 * Package `shapes`:
   * Added `FromAnyValue`: extract shape from a Go type.
-* New backend: `stablehlo` (or simply _"hlo"_ for short) using https://github.com/gomlx/go-xla/pkg/stablehlo.
+* New backend: `stablehlo` (or simply _"hlo"_ for short) using https://github.com/gomlx/go-xla/stablehlo.
   * All standard binary and unary ops implemented.
   * A handful of the standard ops also implemented.
   * If `backends/default` is compiled with `-tags=stablehlo` it will include the `stablehlo` backend.
@@ -385,6 +428,7 @@ Other improvements:
 * `gomlx_checkpoints` CLI tool:
   * Added `-plot` to generate plots for all metrics. It accepts various models, so one can use it to compare models.
 
+# v0.22.1: 2025/08/22 🌀 Convolutions 🌀 
 
 (release v0.22.0 was skipped due to a bug notice slightly after release)
 
@@ -411,6 +455,7 @@ Other improvements:
   * Added `ChannelGroupCount()` and `BatchGroupCount()` to `Convolution` configuration.
 * Updated to gopjrt v0.8.0, with the changes to the convolution API.
 
+# v0.21.1: 2025/08/16 Added Zero-dim tensors support and other small improvements. 
 
 * Package `tensors` and `graph`:
   * Added support for zero-dim tensors.
@@ -436,6 +481,7 @@ Other improvements:
   * Refactoring and clean up of execution loops.
   * Separated `TestDotGeneral_PerformanceTable` behind the build tag `perf`.
 
+# v0.21.0: 2025/07/01 🌞 Summer Edition 🌞
 
 * Package `simplego`:
   * Added `GetBackend` that returns a singleton backend, created with the default configuration at the first request.
@@ -476,6 +522,7 @@ Other improvements:
     * `ParamInitialSeed` removed, since the RNG is initialized by `Context.RngStateWithSeed()`.
 * Fixed some flaky tests.
 
+# v0.20.1: 2025/06/12 Trainer.AccumulateGradients (when the batch doesn't fit memory); VNN fixes; Numpy improvements.
 
 * Package `train`:
   * Better handling of loss (without regularization) in metrics. Added `SetLossNoRegularization` and `GetLossNoRegularization`.
@@ -499,6 +546,7 @@ Other improvements:
     And if it has, it panics with a meaningful error message.
   * Added integration tests.
 
+# v.0.20.0: Small API change: `backends.NewWithConfig()` changed to return an error.
 
 * Package `backends`:
   * **API CHANGE**: Method `NewWithConfig()` changed
@@ -519,6 +567,7 @@ Other improvements:
 * Updated example notebooks to use `github.com/gomlx/gomlx/backends/default` (instead of only `/xla`) and to
   use the new `backends.MustNew()`.
 
+# v0.19.5: 2024/05/30 SimpleGo (go) backend optimizations
 
 * Package `simplego`, the pure Go backend:
   * Added several benchmarks for SimpleGo DotGeneral. Run with:
@@ -536,6 +585,7 @@ Other improvements:
   * Parallelized Erf(x): this will become a model on how to parallelize other unary functions — probably
     when SIMD is available.
 
+# v0.19.4: 2024/05/24 added Vector Neural Networks (VNNs)
 
 * Vector Neural Networks (VNN): allows one to build 3D rotation (SO(3)) equivariant and/or invariant networks. See package `ml/layers/vnn`.
 * Package `xla`
@@ -543,6 +593,7 @@ Other improvements:
 * Package `tensors`
   * Fixed pretty-print of booleans.
 
+# v0.19.3: 2024/05/20 Many SimpleGo improvements.
 
 * v0.19.2 skipped ... issues with the release.
 * Package `simplego`:
@@ -565,6 +616,7 @@ Other improvements:
   * Added `NewExecOrError` and `Exec.CallOrError` as error-returning alternatives.
 * gofmt cleanups by @zjtv
 
+# v0.19.1: 2025/04/30 SimpleGo fixes and new ops; New XLA, requires Gopjrt v0.7.0 update.
 
 * `go mod tidy`
 * Package `simplego`:
@@ -573,6 +625,7 @@ Other improvements:
   * Added `Slice` and `RngBitsGenerator` ops.
 * Updated to Gopjrt v0.7.0, with more memory fixes. **Requires an update of the C++ libraries**.
 
+# v0.19.0: 2025/04/29 Added SimpleGo, a pure Go backend
 
 * Package `backends`:
   * Added `simplego`, a portable, simple albeit slow backend.
@@ -590,6 +643,7 @@ Other improvements:
     purposes.
 * Moved code generation tools from `cmd` to `internal/cmd` directory.
 
+# v0.18.1: 2025/04/13 Many fixes, XLA update, Tensor clone.
 
 * XLA Backend:
   * Updated gopjrt dependency: fix to Scatter flags.
@@ -608,6 +662,7 @@ Other improvements:
   * Added `Variable.Finalize` and `Context.Finalize`.
 * Updated all dependencies and re-tested.
 
+# v0.18.0: Ragged2D; XLA update; Fixed Scatter functions; Fixed memory leaks.
 
 * XLA Backend:
   * Updated dependency to newest Gopjrt 0.6.3: small memory leak fixes
@@ -619,6 +674,7 @@ Other improvements:
   * `DefaultNodeLogger` now accepts the `#full ` prefix that forces printing the full value of a tensor,
     in Go-code format.
 
+# v0.17.1: 2025/02/26 CosineSimilarity, Bitcast and many fixes and improvements.
 
 * Added MNIST example (thanks to @TuSKan).
 * `gomlx_checkpoints` now displays the value of scalar variables.
@@ -650,6 +706,7 @@ Other improvements:
 * Updated dependency to `gopjrt` v0.6.2.
 * Replaced `stringer` by `enumer` everywhere.
 
+# v0.17.0: bitwise ops, triplet losses, new layers, fixes, and more.
 
 * Backend API change: separating Logical and Bitwise versions of various ops derived from And, Or, Xor and Not.
 * Updated dependency to gopjrt v0.6.0.
@@ -687,8 +744,10 @@ Other improvements:
       `BitwiseXor`, `BitwiseNot`.
   * Kept an alias from `And`, `Or` and `Not` to the `LogicalAnd`, `LogicalOr`, `LogicalXor` and `LogicalNot`.
 
+# v0.16.1 - 🎄 2024/12/19 🎄 MatMul fixes
 * MatMul fixed for some edge shape configuration and greatly accelerated in some cases.
 
+# v0.16.0 - 🎄 2024/12/19 🎄 Benchmarks, Speed improvements with gopjrt v0.5.0, Shared buffers.
 
 * XLA backend now accepts the absolute path to the PJRT plugin (`GOMLX_BACKEND="xla:<pjrt_path>"`)
 * Updated GitHub action (`go.yaml`) to only change the README.md with the result of the change, if pushing to the
@@ -706,10 +765,12 @@ Other improvements:
 * Package `backends` and `backends/xla`:
   * Added `Backend.HasSharedBuffer`, `Backend.NewSharedBuffer` and `Backend.BufferData`.
 
+# v0.15.3 - 2024/11/25
 
 * Added pre-linking of CPU PJRT packages, both statically and dynamically.
 * Re-enabling Mac version: currently only statically linked.
 
+# v0.15.2 - 2024/11/17
 
 * Fixed printing of `uint` tensors.
 * Fixed Dockerfile.
@@ -729,12 +790,14 @@ Other improvements:
 * Added `layers/lstm` to create LSTM layers (experimental), in use by ONNX conversion to GoMLX.
 * Updated dependencies; gopjrt v0.4.7.
 
+# v0.15.1 - 2024/11/11 Updated downloader, in support for
 
 * Updated dependency to **gopjrt** 0.4.5
 * Moving package `huggingface` and `downloader` to "github.com/gomlx/go-huggingface": marked as deprecated.
 * Added checks and better error report for misuse of rngState in random functions.
 * Added graph.RandomIntN and context.Context.RandomIntN.
 
+# v0.15.0 - 2024/11/01 Some API clean up; Added support for ONNX model conversion.
 
 * Package `graph`:
   * Added `MatMul`, with semantics similar to `numpy.matmul`

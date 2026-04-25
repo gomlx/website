@@ -2,9 +2,8 @@
 title: "Debugging"
 section: "Guides"
 weight: 30
-source: "https://github.com/gomlx/gomlx/blob/main/docs/debugging.md"
+source: "https://github.com/gomlx/gomlx/blob/compute/docs/debugging.md"
 ---
-
 
 Unfortunately, the computers just "don't get it", and they do what we told them to do, and not what
 we wanted them to do, and programs fail or crash. GoMLX provides different ways to track down various

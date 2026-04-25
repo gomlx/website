@@ -2,9 +2,8 @@
 title: "Developing"
 section: "Guides"
 weight: 40
-source: "https://github.com/gomlx/gomlx/blob/main/docs/developing.md"
+source: "https://github.com/gomlx/gomlx/blob/compute/docs/developing.md"
 ---
-
 
 Below is a list of usual low level implementation tasks:
 
