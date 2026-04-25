@@ -1,6 +1,6 @@
-# GoMLX Documentation Site
+# [gomlx.github.io -GoMLX Documentation Site](https://gomlx.github.io)
 
-🚧 **Experimental/Under-construction**:
+🚧 **Experimental/Under-Construction**:
 The official documentation website for [GoMLX](https://github.com/gomlx/gomlx) — an accelerated machine learning and math framework for Go.
 
 The documentation site is built using [Hugo](https://gohugo.io).
@@ -11,8 +11,8 @@ For those writing the documentation, use the following commands to set up the en
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/gomlx/website
-cd website
+git clone https://github.com/gomlx/gomlx.github.io
+cd gomlx.github.io
 
 # 2. Install Hugo Extended
 # macOS: brew install hugo | Linux: snap install hugo --channel=extended | Win: choco install hugo-extended
